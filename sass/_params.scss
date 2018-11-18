@@ -1,0 +1,27 @@
+$brBold: 'BrandonGrotesque-Bold';
+$brLight: 'BrandonGrotesque-Light';
+$brReg: 'BrandonGrotesque-Regular';
+$brMedium: 'BrandonGrotesque-Medium';
+$brandonDir: './fonts/BrandonGrotesque/';
+$colorText: #ffffff;
+
+
+@mixin font( $fontSize, $fontFamily,  $fontColor: #ffffff){
+    color: $fontColor;
+    font: $fontSize $fontFamily;
+}
+
+@mixin flex($justifyContent: flex-start, $alignItems: center, $display:flex){
+    display: $display;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+@mixin fontInclude( $fontName:$brReg, $fontFolder:$brandonDir) {
+    @font-face{
+        font-family: $fontName;
+        src: url($fontFolder + $fontName + '.ttf');
+
+    }
+
+}

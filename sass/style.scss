@@ -1,0 +1,310 @@
+
+@import "./_params";
+
+
+@include fontInclude();
+@include fontInclude($brBold);
+@include fontInclude($brMedium);
+@include fontInclude($brLight);
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	text-decoration: none;
+}
+
+body{
+	color: $colorText;
+	background-color: #7690c5;
+
+	.face{
+		width:50px;
+		height:50px;
+	}
+
+	.wrapper{
+
+		width: 100%;
+
+	/* 	background-image: url('imgs/smartOrangeTest_bg.jpg');
+	 */
+		.logo,
+		.team,
+		.hello{
+			@include flex(center);
+			text-align: center;
+
+		}
+
+		.logo,
+		.team{
+			flex-direction: column;
+		}
+
+		.logo{
+
+			background-image: url('imgs/logo.jpg');
+			width: 100%;
+			height: 100vh;
+			position: relative;
+			z-index: 9;
+
+			&::after{
+				position: absolute;
+				z-index: 10;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.35);
+			}
+
+			h4{
+				@include font(32px, $brLight);
+			}
+			h2{
+				@include font(66px, $brBold);
+			}
+
+			.learn_more{
+				@include font(23px, $brBold);
+				box-sizing: border-box;
+				padding: 18px 67px 20px 67px;
+				background-color: transparent;
+				border-radius: 3px;
+				border: 2px solid #fff;
+			}
+		}
+
+		.team{
+
+
+			background-color: #111111;
+			padding: 102px 0 100px 0;
+
+			.team_head{
+
+				margin: 0 0 75px 0;
+				.team_title{
+					@include font(60px, $brLight);
+
+					.bold{
+						font-family: $brBold;
+					}
+
+				}
+
+				.team_info{
+					@include font(22px, $brReg, #777);
+				}
+			}
+
+			.team_worker{
+
+				@include flex(space-between);
+				flex-wrap: wrap;
+				max-width: 800px;
+
+				.worker_detail{
+
+					@include flex();
+					flex-direction: column;
+					.worker_name{
+
+						@include flex();
+					    flex-direction: column;
+
+					    img{
+						    display: block;
+						    box-sizing: border-box;
+						    width: 234px;
+						    height: 234px;
+						    border-radius: 50%;
+						    border: 8px solid #fff;
+					    }
+
+					    figcaption{
+
+					    	@include flex();
+					        flex-direction: column;
+
+					    	.name{
+					    	    @include font(18px, $brBold);
+					    	    margin: 17px 0 10px 0;
+					        }   
+
+					        .position{
+						        @include font(16px, $brReg, #ebebeb);
+						         margin: 0 0 10px 0;
+					        }
+					    }
+					   
+				    }
+
+				    .social{
+				    	width: 100%;
+				    	@include flex(center);
+				    	margin: 10px 0 0 0;
+
+				    	.icons{
+				    		width: 41px;
+				    		height: 41px;
+				    		@include flex(center);
+				    		color: #fff;
+				    		border: 3px solid #fff;
+				    		border-radius: 50%;
+				    		box-sizing: border-box;
+
+				    	}
+				    }
+				}
+				
+
+				.info{
+					@include font(20px, $brReg, #ebebeb);
+					width: 73.75%;
+					margin: 0 auto;
+					margin: 50px auto 0 auto;
+				
+				}
+			}
+
+
+		}
+
+		.hello{
+
+			@include flex(center);
+			padding: 100px 0 100px 0;
+
+			.hello_left,
+			.hello_right{
+				width: 50%;
+				max-width: 470px;
+				@include flex();
+				flex-direction: column;
+			}
+
+			.hello_left{
+
+				
+				align-items: flex-start;
+				text-align: left;
+
+				.hello_title{
+					margin: 0 0 50px 0;
+				    h3{
+					    @include font(60px, $brLight);
+					    margin: 0 0 17px 0;
+
+					    .bold{
+						    font-family: $brBold;
+					    }
+				    }
+
+				    &_text{
+					    @include font(18px, $brReg);
+				    }
+			    }
+
+			    .hello_info{
+
+			    	@include flex(space-between);
+			    	flex-wrap: wrap;
+
+				    .hello_icons{
+				    	width: 50%;
+				    	margin: 0 0 40px 0;
+				    	@include flex();
+					    @include font(18px, $brReg);
+					    text-align: center;
+
+
+					    i::before{
+					    	font-size: 30px;
+					    	width: 30px;
+					    	height: 30px;
+					    	display: block;
+					    	margin: 0 10px 0 0;
+					    }
+				    }
+			    }
+			}
+
+			
+
+			.hello_form{
+
+				align-items: flex-end;
+				
+
+				.info_user{
+
+					@include flex();
+					flex-direction: column;
+					width: 97.02%;
+
+					&:placeholder{
+					    @include font(18px, $brMedium, #bbbbbb);
+				    }
+
+				    input, 
+				    textarea{
+				    	width: 100%;
+				    	box-sizing: border-box;
+				    	border: 1px solid #cccccc;
+				    	border-radius: 4px;
+				    }
+
+				    input{
+				    	padding: 15px 0 20px 18px;
+				    }
+
+				    .user_name{
+				    	margin: 0 0 28px 0;
+				    }
+
+				    .user_email{
+				    	margin: 0 0 18px 0;
+				    }
+
+				    textarea{
+				    	resize: none;
+				    	height: 210px;
+				    	padding: 15px 0 10px 18px;
+				    }
+
+
+				    
+
+
+				}
+				
+
+
+			}
+		}
+
+
+		.hello,
+		footer{
+			background-color: #7690c5;
+		}
+
+		footer{
+
+			@include font(16px, $brMedium);
+			padding: 30px 0 30px 0;
+			text-align: center;
+
+			span{
+				.year{
+					@include font(16px, $brMedium);
+				}
+			}
+		}
+	}
+}
